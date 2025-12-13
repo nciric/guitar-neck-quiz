@@ -1,3 +1,5 @@
+// Typescript needs to be compiled to JavaScript to run in browser.
+// Use tsc guitar-neck-quiz.ts to compile it.
 // Extra data to help with drawing.
 type NoteData = {
     // String name.
