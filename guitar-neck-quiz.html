@@ -2,14 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guitar Neck Quiz</title>
     <link rel="stylesheet" href="guitar-neck-quiz.css">
-    <script src="guitar-neck-quiz.js"></script>
+    <script src="guitar-neck-quiz.js" defer></script>
   </head>
-  <body onload="drawNoteInfo()">
-    <div id="container">
-      <canvas id="note-info" width="500" height="800"></canvas>
+  <body>
+    <div id="app-container">
+      <header>
+        <h1>Guitar Neck Quiz</h1>
+        <div class="score-board">
+          Score: <span id="score-val">0/0</span> | Streak: <span id="streak-val">0</span>
+        </div>
+      </header>
+
+      <main class="main-layout">
+        <section class="controls-panel">
+          <div class="settings">
+            <h3>Settings</h3>
+            <label>
+              <input type="checkbox" id="setting-octave" checked>
+              Octave Sensitive
+            </label>
+            <label>
+              <input type="checkbox" id="setting-accidentals" checked>
+              Include Accidentals
+            </label>
+            <label>
+              <input type="checkbox" id="setting-sound" checked>
+              Enable Sound
+            </label>
+          </div>
+          <div class="actions">
+            <button id="btn-check" class="btn primary">Check Answers</button>
+            <button id="btn-next" class="btn secondary" disabled>Next Note</button>
+          </div>
+        </section>
+
+        <section class="canvas-container">
+          <canvas id="note-info" width="800" height="600"></canvas>
+        </section>
+      </main>
+
+      <footer class="legend">
+        <div class="legend-item"><span class="marker-legend correct">✓</span> Correct</div>
+        <div class="legend-item"><span class="marker-legend incorrect">✗</span> Incorrect</div>
+        <div class="legend-item"><span class="marker-legend missed"></span> Missed</div>
+      </footer>
     </div>
   </body>
 </html>
